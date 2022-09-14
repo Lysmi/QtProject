@@ -717,7 +717,7 @@ class Ui_MainWindow(object):
 
 
 def experiment(graph, qtGraph: QtGraph):
-    qtGraph.plot(graph, pen=None, symbol='o')
+    qtGraph.plot(graph, pen=(0, 1), symbol=None)
 
 
 if __name__ == "__main__":
