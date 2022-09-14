@@ -31,16 +31,16 @@ def Filter(freq,  # частота
     y = lfilter(b, a, data)
 
     # Darstellung von der gefilterten und nicht gefilterten Daten (zusammen)
-    # if isGraphsDebug:
-    #     plt.subplot(2, 1, 2)
-    #     plt.plot(t, data, 'b-', label='data')
-    #     plt.plot(t, y, 'g-', linewidth=2, label='filtered data')
-    #     plt.xlabel('Time [sec]')
-    #     plt.grid()
-    #     plt.legend()
+    if isGraphsDebug:
+        plt.subplot(2, 1, 2)
+        plt.plot(t, data, 'b-', label='data')
+        plt.plot(t, y, 'g-', linewidth=2, label='filtered data')
+        plt.xlabel('Time [sec]')
+        plt.grid()
+        plt.legend()
 
-    #     plt.subplots_adjust(hspace=0.35)
-    #     plt.show()
+        plt.subplots_adjust(hspace=0.35)
+        plt.show()
     return (y, freqChar)
 
 

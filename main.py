@@ -20,7 +20,13 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
                 self.v2_a2.value(),
                 self.v2_b1.value(),
                 self.v2_b2.value(),
-                self.upGraphicsView_2, self.downGraphicsView_2)
+                self.upGraphicsView_2, self.downGraphicsView_2, self.v2_signaltype.currentText())
+        )
+        self.pushButton_5.clicked.connect(
+            lambda: firstExperiment(
+                self.v1_frequenz.value(),
+                self.v1_duration.value(),
+                self.upGraphicsView, self.downGraphicsView, self.v1_signaltype.currentText())
         )
         self.upGraphicsView.setBackground(pyqtgraph.mkColor(0.82))
         self.downGraphicsView.setBackground(pyqtgraph.mkColor(0.82))
@@ -32,13 +38,30 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
         self.downGraphicsView_4.setBackground(pyqtgraph.mkColor(0.82))
 
 
-def secondExperiment(freq, duration, a1, a2, b1, b2, qtGraphUp, qtGraphDown):
+def secondExperiment(freq, duration, a1, a2, b1, b2, qtGraphUp, qtGraphDown, type):
     if (a1 == 0):
         return
-    data = Signale.sin(freq, 10, duration)
+    data = []
+    if type == "Sinus":
+        data = Signale.sin(freq, 10, duration)
+    elif type == "Rechteck":
+        data = Signale.rechteck(freq, 10, duration)
+    elif type == "Dreieck":
+        data = Signale.dreieck(freq, 10, duration)
     filterRes = Filter(freq, duration, a1, a2, b1, b2, data)
     plotGraphWithData(filterRes[0], data, qtGraphUp)
     plotGraphWithXY(filterRes[1], qtGraphDown)
+
+
+def firstExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
+    data = []
+    if type == "Sinus":
+        data = Signale.sin(freq, 10, duration)
+    elif type == "Rechteck":
+        data = Signale.rechteck(freq, 10, duration)
+    elif type == "Dreieck":
+        data = Signale.dreieck(freq, 10, duration)
+    plotGraph(data, qtGraphUp)
 
 
 def plotGraph(graph, qtGraph: PlotWidget):
