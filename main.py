@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets
-from pyqtgraph import PlotWidget as QtGraph
+from pyqtgraph import PlotWidget
 import sys  # We need sys so that we can pass argv to QApplication
 import mainForm
 import os
@@ -9,7 +9,6 @@ import pyqtgraph
 
 
 class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
-
     def __init__(self):
         super().__init__()
         self.setupUi(self)  # Это нужно для инициализации нашего дизайна
@@ -42,20 +41,20 @@ def secondExperiment(freq, duration, a1, a2, b1, b2, qtGraphUp, qtGraphDown):
     plotGraphWithXY(filterRes[1], qtGraphDown)
 
 
-def plotGraph(graph, qtGraph: QtGraph):
+def plotGraph(graph, qtGraph: PlotWidget):
     qtGraph.clear()
     qtGraph.plot(graph, pen=pyqtgraph.mkPen(color='r'), symbol=None, )
     qtGraph.autoRange()
 
 
-def plotGraphWithXY(graph, qtGraph: QtGraph):
+def plotGraphWithXY(graph, qtGraph: PlotWidget):
     qtGraph.clear()
     qtGraph.plot(graph[0], graph[1], pen=pyqtgraph.mkPen(
         color='r'), symbol=None)
     qtGraph.autoRange()
 
 
-def plotGraphWithData(graph, data, qtGraph: QtGraph):
+def plotGraphWithData(graph, data, qtGraph: PlotWidget):
     qtGraph.clear()
     qtGraph.plot(graph, pen=pyqtgraph.mkPen(color='r'), symbol=None, )
     qtGraph.plot(data, pen=pyqtgraph.mkPen(color='b'), symbol=None, )
