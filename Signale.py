@@ -3,33 +3,19 @@ from scipy import signal
 import matplotlib.pyplot as plt
 
 
-def rechteck(freq, amp):
-    zeit = np.linspace(0, 2, 1000)
+def rechteck(freq, amp, duration):
+    zeit = np.linspace(0, 2, int(freq*duration))
     rect = amp*signal.square(2*np.pi*freq*zeit, duty=0.3)
-
-    plt.figure(figsize=(10, 4))
-    plt.plot(zeit, rect)
-    plt.xlabel('Zeit (s)')
-    plt.ylabel('Amplitude')
-    plt.show()
+    return rect
 
 
-def sin(freq, amp):
-    zeit = np.linspace(0, 2, 1000)
+def sin(freq, amp, duration):
+    zeit = np.linspace(0, 2, int(freq*duration))
     sin = amp*np.sin(2*np.pi*freq*zeit)
-    plt.figure(figsize=(10, 4))
-    plt.plot(zeit, sin)
-    plt.xlabel('Time (s)')
-    plt.ylabel('Amplitude')
-    plt.show()
     return sin
 
 
-def dreieck(freq, amp):
-    zeit = np.linspace(0, 2, 1000)
+def dreieck(freq, amp, duration):
+    zeit = np.linspace(0, 2, int(freq*duration))
     dreieck = amp*signal.sawtooth(2*np.pi*freq*zeit, width=0.5)
-    plt.figure(figsize=(10, 4))
-    plt.plot(zeit, dreieck)
-    plt.xlabel('Zeit (s)')
-    plt.ylabel('Amplitude')
-    plt.show()
+    return dreieck

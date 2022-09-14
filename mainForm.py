@@ -616,10 +616,16 @@ class Ui_MainWindow(object):
 
         # мне похер, я Донбасянен
         # Подключение кнопак
-        a = Signale.sin(3, 10)+Signale.sin(1, 15)-Signale.sin(4, 5)
+
         self.pushButton_2.clicked.connect(
-            lambda: experiment(Filter(
-                5, 200, 0.000223213, 0.00035454, 0.00656, 0.0055, a), self.upGraphicsView_2)
+            lambda: secondExperiment(
+                self.v2_frequenz.value(),
+                self.v2_duration.value(),
+                self.v2_a1.value(),
+                self.v2_a2.value(),
+                self.v2_b1.value(),
+                self.v2_b2.value(),
+                self.upGraphicsView_2)
         )
 
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -716,8 +722,15 @@ class Ui_MainWindow(object):
         self.menuMenu.setTitle(_translate("MainWindow", "Menu"))
 
 
-def experiment(graph, qtGraph: QtGraph):
-    qtGraph.plot(graph, pen=(0, 1), symbol=None)
+def secondExperiment(freq, duration, a1, a2, b1, b2, qtGraph):
+    data = Signale.sin(freq, 10, duration)
+    plotGraph(Filter(
+        freq, duration, a1, a2, b1, b2, data), qtGraph)
+
+
+def plotGraph(graph, qtGraph: QtGraph):
+    qtGraph.clear()
+    qtGraph.plot(graph, pen=(0, 1), symbol=None, )
 
 
 if __name__ == "__main__":

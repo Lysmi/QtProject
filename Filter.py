@@ -39,5 +39,4 @@ def Filter(freq,  # частота
 
         plt.subplots_adjust(hspace=0.35)
         plt.show()
-
     return y

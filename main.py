@@ -16,8 +16,6 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
 
 
 def main():
-    a = Signale.sin(3, 10)+Signale.sin(1, 15)-Signale.sin(4, 5)
-    Filter.Filter(5, 200, 0.000223213, 0.00035454, 0.00656, 0.0055, a)
     app = QtWidgets.QApplication(sys.argv)
     main = MainWindow()
     main.show()
