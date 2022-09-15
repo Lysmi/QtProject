@@ -150,9 +150,9 @@ p, li { white-space: pre-wrap; }
      <widget class="QComboBox" name="v1_signaltype">
       <property name="geometry">
        <rect>
-        <x>170</x>
+        <x>150</x>
         <y>90</y>
-        <width>211</width>
+        <width>230</width>
         <height>30</height>
        </rect>
       </property>
@@ -186,7 +186,7 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>20</x>
         <y>90</y>
-        <width>150</width>
+        <width>130</width>
         <height>30</height>
        </rect>
       </property>
