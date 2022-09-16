@@ -53,7 +53,7 @@
      <string notr="true">background: rgb(161, 169, 180)</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <property name="documentMode">
      <bool>true</bool>
@@ -117,8 +117,9 @@
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Kurzbeschreibung: Analysieren Sie die Effekte der Abtastfrequenz anhand der vorgegebenen Versuchsbeschreibung.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:16pt;&quot;&gt;Versuch 1: Abtastfrequenz.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:16pt;&quot;&gt;Kurzbeschreibung: Analysieren Sie die Effekte der Abtastfrequenz anhand der vorgegebenen Versuchsbeschreibung.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="PlotWidget" name="upGraphicsView">
@@ -317,6 +318,12 @@ p, li { white-space: pre-wrap; }
        <property name="styleSheet">
         <string notr="true">background: rgb(255, 255, 255)</string>
        </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>10000</number>
+       </property>
       </widget>
       <widget class="QDoubleSpinBox" name="v1_duration">
        <property name="geometry">
@@ -337,7 +344,7 @@ p, li { white-space: pre-wrap; }
         <string notr="true">background: rgb(255, 255, 255)</string>
        </property>
        <property name="minimum">
-        <double>0.000000000000000</double>
+        <double>1.000000000000000</double>
        </property>
        <property name="maximum">
         <double>10000000.000000000000000</double>
@@ -460,8 +467,9 @@ p, li { white-space: pre-wrap; }
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Kurzbeschreibung: Realisieren Sie durch Eingabe der FIR-Filterkoeffizienten digitale Hoch- und Tiefpassfilter.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:16pt;&quot;&gt;Versuch 2: FIR-Filter.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:16pt;&quot;&gt;Kurzbeschreibung: Realisieren Sie durch Eingabe der FIR-Filterkoeffizienten digitale Hoch- und Tiefpassfilter.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="PlotWidget" name="upGraphicsView_2">
@@ -662,8 +670,11 @@ p, li { white-space: pre-wrap; }
        <property name="styleSheet">
         <string notr="true">background: rgb(255, 255, 255)</string>
        </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
        <property name="maximum">
-        <number>1000</number>
+        <number>10000</number>
        </property>
       </widget>
       <widget class="QLabel" name="label_23">
@@ -759,6 +770,9 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="styleSheet">
         <string notr="true">background: rgb(255, 255, 255)</string>
+       </property>
+       <property name="minimum">
+        <double>1.000000000000000</double>
        </property>
        <property name="maximum">
         <double>100.000000000000000</double>
@@ -979,8 +993,9 @@ p, li { white-space: pre-wrap; }
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Kurzbeschreibung: Hinter der Übertragungsfunktion verbirgt sich ein Filter. Welches? Wählen Sie geeignete Signalformen aus und analzsieren Sie das Ausgangssignal.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:16pt;&quot;&gt;Versuch 3: Übertragungsfunktion.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:16pt;&quot;&gt;Kurzbeschreibung: Hinter der Übertragungsfunktion verbirgt sich ein Filter. Welches? Wählen Sie geeignete Signalformen aus und analzsieren Sie das Ausgangssignal.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="PlotWidget" name="upGraphicsView_3">
@@ -1122,9 +1137,9 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>80</y>
-         <width>221</width>
-         <height>21</height>
+         <y>120</y>
+         <width>330</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="font">
@@ -1140,10 +1155,10 @@ p, li { white-space: pre-wrap; }
       <widget class="QSpinBox" name="v3_frequenz">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>50</y>
-         <width>62</width>
-         <height>22</height>
+         <x>10</x>
+         <y>90</y>
+         <width>140</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="font">
@@ -1154,15 +1169,21 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="styleSheet">
         <string notr="true">background: rgb(255, 255, 255)</string>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>10000</number>
        </property>
       </widget>
       <widget class="QDoubleSpinBox" name="v3_duration">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>80</y>
-         <width>62</width>
-         <height>22</height>
+         <x>10</x>
+         <y>150</y>
+         <width>140</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="font">
@@ -1174,14 +1195,17 @@ p, li { white-space: pre-wrap; }
        <property name="styleSheet">
         <string notr="true">background: rgb(255, 255, 255)</string>
        </property>
+       <property name="minimum">
+        <double>1.000000000000000</double>
+       </property>
       </widget>
       <widget class="QLabel" name="label_29">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>50</y>
+         <x>160</x>
+         <y>90</y>
          <width>41</width>
-         <height>16</height>
+         <height>25</height>
         </rect>
        </property>
        <property name="font">
@@ -1197,10 +1221,10 @@ p, li { white-space: pre-wrap; }
       <widget class="QLabel" name="label_30">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>85</y>
-         <width>41</width>
-         <height>16</height>
+         <x>160</x>
+         <y>150</y>
+         <width>50</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="font">
@@ -1286,8 +1310,9 @@ p, li { white-space: pre-wrap; }
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Kurzbeschreibung: Ermitteln Sie aus der Autokorrelationsfunktion, die Periodendauer sowie die Energie des Eingangssignals.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:16pt;&quot;&gt;Versuch 4: Autokorrelation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:16pt;&quot;&gt;Kurzbeschreibung: Ermitteln Sie aus der Autokorrelationsfunktion, die Periodendauer sowie die Energie des Eingangssignals.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QComboBox" name="v4_signaltype">
@@ -1453,9 +1478,9 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>80</y>
-         <width>201</width>
-         <height>21</height>
+         <y>120</y>
+         <width>330</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="font">
@@ -1471,10 +1496,10 @@ p, li { white-space: pre-wrap; }
       <widget class="QSpinBox" name="v4_frequenz">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>50</y>
-         <width>62</width>
-         <height>22</height>
+         <x>10</x>
+         <y>90</y>
+         <width>140</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="font">
@@ -1485,15 +1510,24 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="styleSheet">
         <string notr="true">background: rgb(255, 255, 255)</string>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>10000</number>
+       </property>
+       <property name="singleStep">
+        <number>0</number>
        </property>
       </widget>
       <widget class="QDoubleSpinBox" name="v4_duration">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>80</y>
-         <width>62</width>
-         <height>22</height>
+         <x>10</x>
+         <y>150</y>
+         <width>140</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="font">
@@ -1505,14 +1539,17 @@ p, li { white-space: pre-wrap; }
        <property name="styleSheet">
         <string notr="true">background: rgb(255, 255, 255)</string>
        </property>
+       <property name="minimum">
+        <double>1.000000000000000</double>
+       </property>
       </widget>
       <widget class="QLabel" name="label_32">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>50</y>
+         <x>160</x>
+         <y>90</y>
          <width>41</width>
-         <height>16</height>
+         <height>25</height>
         </rect>
        </property>
        <property name="font">
@@ -1528,10 +1565,10 @@ p, li { white-space: pre-wrap; }
       <widget class="QLabel" name="label_33">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>85</y>
-         <width>41</width>
-         <height>16</height>
+         <x>160</x>
+         <y>150</y>
+         <width>50</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="font">
@@ -1554,15 +1591,9 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>1049</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuMenu">
-    <property name="title">
-     <string>Menu</string>
-    </property>
-   </widget>
-   <addaction name="menuMenu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

@@ -134,6 +134,8 @@ class Ui_MainWindow(object):
         font.setPointSize(16)
         self.v1_frequenz.setFont(font)
         self.v1_frequenz.setStyleSheet("background: rgb(255, 255, 255)")
+        self.v1_frequenz.setMinimum(1)
+        self.v1_frequenz.setMaximum(10000)
         self.v1_frequenz.setObjectName("v1_frequenz")
         self.v1_duration = QtWidgets.QDoubleSpinBox(self.groupBox_5)
         self.v1_duration.setGeometry(QtCore.QRect(10, 150, 140, 25))
@@ -142,7 +144,7 @@ class Ui_MainWindow(object):
         font.setPointSize(16)
         self.v1_duration.setFont(font)
         self.v1_duration.setStyleSheet("background: rgb(255, 255, 255)")
-        self.v1_duration.setMinimum(0.0)
+        self.v1_duration.setMinimum(1.0)
         self.v1_duration.setMaximum(10000000.0)
         self.v1_duration.setSingleStep(0.5)
         self.v1_duration.setObjectName("v1_duration")
@@ -266,7 +268,8 @@ class Ui_MainWindow(object):
         font.setPointSize(16)
         self.v2_frequenz.setFont(font)
         self.v2_frequenz.setStyleSheet("background: rgb(255, 255, 255)")
-        self.v2_frequenz.setMaximum(1000)
+        self.v2_frequenz.setMinimum(1)
+        self.v2_frequenz.setMaximum(10000)
         self.v2_frequenz.setObjectName("v2_frequenz")
         self.label_23 = QtWidgets.QLabel(self.groupBox_2)
         self.label_23.setGeometry(QtCore.QRect(10, 230, 51, 21))
@@ -303,6 +306,7 @@ class Ui_MainWindow(object):
         font.setPointSize(16)
         self.v2_duration.setFont(font)
         self.v2_duration.setStyleSheet("background: rgb(255, 255, 255)")
+        self.v2_duration.setMinimum(1.0)
         self.v2_duration.setMaximum(100.0)
         self.v2_duration.setSingleStep(0.01)
         self.v2_duration.setObjectName("v2_duration")
@@ -438,37 +442,40 @@ class Ui_MainWindow(object):
         self.label_13.setFont(font)
         self.label_13.setObjectName("label_13")
         self.label_14 = QtWidgets.QLabel(self.groupBox_3)
-        self.label_14.setGeometry(QtCore.QRect(10, 80, 221, 21))
+        self.label_14.setGeometry(QtCore.QRect(10, 120, 330, 25))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(16)
         self.label_14.setFont(font)
         self.label_14.setObjectName("label_14")
         self.v3_frequenz = QtWidgets.QSpinBox(self.groupBox_3)
-        self.v3_frequenz.setGeometry(QtCore.QRect(230, 50, 62, 22))
+        self.v3_frequenz.setGeometry(QtCore.QRect(10, 90, 140, 25))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(16)
         self.v3_frequenz.setFont(font)
         self.v3_frequenz.setStyleSheet("background: rgb(255, 255, 255)")
+        self.v3_frequenz.setMinimum(1)
+        self.v3_frequenz.setMaximum(10000)
         self.v3_frequenz.setObjectName("v3_frequenz")
         self.v3_duration = QtWidgets.QDoubleSpinBox(self.groupBox_3)
-        self.v3_duration.setGeometry(QtCore.QRect(230, 80, 62, 22))
+        self.v3_duration.setGeometry(QtCore.QRect(10, 150, 140, 25))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(16)
         self.v3_duration.setFont(font)
         self.v3_duration.setStyleSheet("background: rgb(255, 255, 255)")
+        self.v3_duration.setMinimum(1.0)
         self.v3_duration.setObjectName("v3_duration")
         self.label_29 = QtWidgets.QLabel(self.groupBox_3)
-        self.label_29.setGeometry(QtCore.QRect(300, 50, 41, 16))
+        self.label_29.setGeometry(QtCore.QRect(160, 90, 41, 25))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(16)
         self.label_29.setFont(font)
         self.label_29.setObjectName("label_29")
         self.label_30 = QtWidgets.QLabel(self.groupBox_3)
-        self.label_30.setGeometry(QtCore.QRect(300, 85, 41, 16))
+        self.label_30.setGeometry(QtCore.QRect(160, 150, 50, 25))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(16)
@@ -563,37 +570,41 @@ class Ui_MainWindow(object):
         self.label_16.setFont(font)
         self.label_16.setObjectName("label_16")
         self.label_31 = QtWidgets.QLabel(self.groupBox_4)
-        self.label_31.setGeometry(QtCore.QRect(10, 80, 201, 21))
+        self.label_31.setGeometry(QtCore.QRect(10, 120, 330, 25))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(16)
         self.label_31.setFont(font)
         self.label_31.setObjectName("label_31")
         self.v4_frequenz = QtWidgets.QSpinBox(self.groupBox_4)
-        self.v4_frequenz.setGeometry(QtCore.QRect(230, 50, 62, 22))
+        self.v4_frequenz.setGeometry(QtCore.QRect(10, 90, 140, 25))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(16)
         self.v4_frequenz.setFont(font)
         self.v4_frequenz.setStyleSheet("background: rgb(255, 255, 255)")
+        self.v4_frequenz.setMinimum(1)
+        self.v4_frequenz.setMaximum(10000)
+        self.v4_frequenz.setSingleStep(0)
         self.v4_frequenz.setObjectName("v4_frequenz")
         self.v4_duration = QtWidgets.QDoubleSpinBox(self.groupBox_4)
-        self.v4_duration.setGeometry(QtCore.QRect(230, 80, 62, 22))
+        self.v4_duration.setGeometry(QtCore.QRect(10, 150, 140, 25))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(16)
         self.v4_duration.setFont(font)
         self.v4_duration.setStyleSheet("background: rgb(255, 255, 255)")
+        self.v4_duration.setMinimum(1.0)
         self.v4_duration.setObjectName("v4_duration")
         self.label_32 = QtWidgets.QLabel(self.groupBox_4)
-        self.label_32.setGeometry(QtCore.QRect(300, 50, 41, 16))
+        self.label_32.setGeometry(QtCore.QRect(160, 90, 41, 25))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(16)
         self.label_32.setFont(font)
         self.label_32.setObjectName("label_32")
         self.label_33 = QtWidgets.QLabel(self.groupBox_4)
-        self.label_33.setGeometry(QtCore.QRect(300, 85, 41, 16))
+        self.label_33.setGeometry(QtCore.QRect(160, 150, 50, 25))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(16)
@@ -602,18 +613,15 @@ class Ui_MainWindow(object):
         self.experiment.addTab(self.tab_4, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1049, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1049, 20))
         self.menubar.setObjectName("menubar")
-        self.menuMenu = QtWidgets.QMenu(self.menubar)
-        self.menuMenu.setObjectName("menuMenu")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        self.menubar.addAction(self.menuMenu.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.experiment.setCurrentIndex(0)
+        self.experiment.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -623,8 +631,9 @@ class Ui_MainWindow(object):
         self.textEdit.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;\"><span style=\" font-size:16pt;\">Kurzbeschreibung: Analysieren Sie die Effekte der Abtastfrequenz anhand der vorgegebenen Versuchsbeschreibung.</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:16pt;\">Versuch 1: Abtastfrequenz.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:16pt;\">Kurzbeschreibung: Analysieren Sie die Effekte der Abtastfrequenz anhand der vorgegebenen Versuchsbeschreibung.</span></p></body></html>"))
         self.v1_signaltype.setItemText(0, _translate("MainWindow", "Sinus"))
         self.v1_signaltype.setItemText(1, _translate("MainWindow", "Rechteck"))
         self.v1_signaltype.setItemText(2, _translate("MainWindow", "Dreieck"))
@@ -641,8 +650,9 @@ class Ui_MainWindow(object):
         self.textEdit_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;\"><span style=\" font-size:16pt;\">Kurzbeschreibung: Realisieren Sie durch Eingabe der FIR-Filterkoeffizienten digitale Hoch- und Tiefpassfilter.</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:16pt;\">Versuch 2: FIR-Filter.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:16pt;\">Kurzbeschreibung: Realisieren Sie durch Eingabe der FIR-Filterkoeffizienten digitale Hoch- und Tiefpassfilter.</span></p></body></html>"))
         self.v2_signaltype.setItemText(0, _translate("MainWindow", "Sinus"))
         self.v2_signaltype.setItemText(1, _translate("MainWindow", "Rechteck"))
         self.v2_signaltype.setItemText(2, _translate("MainWindow", "Dreieck"))
@@ -662,8 +672,9 @@ class Ui_MainWindow(object):
         self.textEdit_3.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;\"><span style=\" font-size:16pt;\">Kurzbeschreibung: Hinter der Übertragungsfunktion verbirgt sich ein Filter. Welches? Wählen Sie geeignete Signalformen aus und analzsieren Sie das Ausgangssignal.</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:16pt;\">Versuch 3: Übertragungsfunktion.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:16pt;\">Kurzbeschreibung: Hinter der Übertragungsfunktion verbirgt sich ein Filter. Welches? Wählen Sie geeignete Signalformen aus und analzsieren Sie das Ausgangssignal.</span></p></body></html>"))
         self.v3_signaltype.setItemText(0, _translate("MainWindow", "Sinus"))
         self.v3_signaltype.setItemText(1, _translate("MainWindow", "Rechteck"))
         self.v3_signaltype.setItemText(2, _translate("MainWindow", "Dreieck"))
@@ -679,8 +690,9 @@ class Ui_MainWindow(object):
         self.textEdit_4.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;\"><span style=\" font-size:16pt;\">Kurzbeschreibung: Ermitteln Sie aus der Autokorrelationsfunktion, die Periodendauer sowie die Energie des Eingangssignals.</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:16pt;\">Versuch 4: Autokorrelation.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:80%;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:16pt;\">Kurzbeschreibung: Ermitteln Sie aus der Autokorrelationsfunktion, die Periodendauer sowie die Energie des Eingangssignals.</span></p></body></html>"))
         self.v4_signaltype.setItemText(0, _translate("MainWindow", "Sinus"))
         self.v4_signaltype.setItemText(1, _translate("MainWindow", "Rechteck"))
         self.v4_signaltype.setItemText(2, _translate("MainWindow", "Dreieck"))
@@ -692,7 +704,6 @@ class Ui_MainWindow(object):
         self.label_32.setText(_translate("MainWindow", "Hz"))
         self.label_33.setText(_translate("MainWindow", "sec"))
         self.experiment.setTabText(self.experiment.indexOf(self.tab_4), _translate("MainWindow", "Versuch 4"))
-        self.menuMenu.setTitle(_translate("MainWindow", "Menu"))
 from pyqtgraph import PlotWidget
 
 
