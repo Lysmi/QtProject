@@ -1,4 +1,3 @@
-from turtle import width
 from PyQt5 import QtWidgets
 from pyqtgraph import PlotWidget, PlotDataItem, mkBrush, mkColor, mkPen
 import sys  # We need sys so that we can pass argv to QApplication
