@@ -53,22 +53,26 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
         self.downGraphicsView.setTitle('Signal im Frequenzbereich')
         self.downGraphicsView.setLabel('left', text='Amplitude(Vt)')
         self.downGraphicsView.setLabel('bottom', text='Zeit(Sec)')
-        self.downGraphicsView.setLabel('left', text='Amplitude(Vt)')
-        self.downGraphicsView.setLabel('bottom', text='Zeit(Sec)')
 
         self.upGraphicsView_2.setBackground(mkColor(0.82))
+        self.upGraphicsView_2.setTitle('Signal im Frequenzbereich')
+        self.upGraphicsView_2.setLabel('left', text='Amplitude(Vt)')
+        self.upGraphicsView_2.setLabel('bottom', text='Zeit(Sec)')
 
         self.downGraphicsView_2.setBackground(mkColor(0.82))
-        self.downGraphicsView_2.setTitle('Filterfrequenzgang')
+        self.downGraphicsView_2.setTitle('Gefiltertes Signal')
         self.downGraphicsView_2.setLabel('left', text='Amplitude(Vt)')
-        self.downGraphicsView_2.setLabel('bottom', text='Winkelfrequenz')
+        self.downGraphicsView_2.setLabel('bottom', text='Frequenz (s)')
 
         self.upGraphicsView_3.setBackground(mkColor(0.82))
-        self.upGraphicsView_3.setTitle('Filterfrequenzgang')
-        self.upGraphicsView_3.setLabel('left', text='Amplitude(Vt)')
-        self.upGraphicsView_3.setLabel('bottom', text='Winkelfrequenz')
+        self.upGraphicsView_3.setTitle('Fouriertransformation')
+        self.upGraphicsView_3.setLabel('left', text='Amplitude')
+        self.upGraphicsView_3.setLabel('bottom', text='Frequenz (s)')
 
         self.downGraphicsView_3.setBackground(mkColor(0.82))
+        self.downGraphicsView_3.setTitle('Gefiltertes Signal')
+        self.downGraphicsView_3.setLabel('left', text='Amplitude')
+        self.downGraphicsView_3.setLabel('bottom', text='Zeit [s]')
 
         self.upGraphicsView_4.setBackground(mkColor(0.82))
         self.upGraphicsView_4.setTitle('Autokorrelation')
