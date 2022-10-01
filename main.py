@@ -5,6 +5,7 @@ import mainForm
 import os
 import Signale
 from Filter import Filter
+import Filter_new
 import pyqtgraph
 import bandpass
 import Signale_new
@@ -105,9 +106,9 @@ def secondExperiment(freq, duration, a1, a2, b1, b2, qtGraphUp, qtGraphDown, typ
     readedDataY = data[::multiple]
     readedDataX = [i*multiple for i in range(len(readedDataY))]
 
-    filterRes = Filter(freq, duration, a1, a2, b1, b2, readedDataY)
-    plotGraphWithData((readedDataX, filterRes[0]), data, qtGraphUp)
-    plotGraphWithXY(filterRes[1], qtGraphDown)
+    filterRes = Filter_new.Filter(freq, duration, a1, a2, b1, b2, readedDataY)
+    plotGraph(filterRes[0], qtGraphUp)
+    plotGraph(filterRes[1], qtGraphDown)
 
 
 def firstExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
