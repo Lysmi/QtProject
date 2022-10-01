@@ -7,6 +7,7 @@ import Signale
 from Filter import Filter
 import pyqtgraph
 import bandpass
+import Signale_new
 
 
 class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
@@ -112,17 +113,17 @@ def secondExperiment(freq, duration, a1, a2, b1, b2, qtGraphUp, qtGraphDown, typ
 def firstExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
     data = []
     if type == "Sinus":
-        data = Signale.sin(2, 10, duration)
+        data = Signale_new.sin(2, 10, duration)
     elif type == "Rechteck":
-        data = Signale.rechteck(2, 10, duration)
+        data = Signale_new.rechteck(2, 10, duration)
     elif type == "Dreieck":
-        data = Signale.dreieck(2, 10, duration)
+        data = Signale_new.dreieck(2, 10, duration)
     multiple = int(2000/freq)
     multiple = 1 if multiple < 1 else multiple
     readedDataY = data[::multiple]
     readedDataX = [i*multiple for i in range(len(readedDataY))]
-    plotGraph(data, qtGraphUp)
-    plotGraphWithXY((readedDataX, readedDataY), qtGraphDown, 'b')
+    plotGraph(data[0], qtGraphUp)
+    plotGraph(data[1], qtGraphDown, 'b')
 
 
 def plotGraph(graph, qtGraph: PlotWidget, color='r'):
