@@ -597,7 +597,7 @@ class Ui_MainWindow(object):
         self.v4_frequenz.setStyleSheet("background: rgb(255, 255, 255)")
         self.v4_frequenz.setMinimum(1)
         self.v4_frequenz.setMaximum(10000)
-        self.v4_frequenz.setSingleStep(0)
+        self.v4_frequenz.setSingleStep(1)
         self.v4_frequenz.setObjectName("v4_frequenz")
         self.v4_duration = QtWidgets.QDoubleSpinBox(self.groupBox_4)
         self.v4_duration.setGeometry(QtCore.QRect(10, 150, 140, 25))

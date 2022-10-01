@@ -63,8 +63,10 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
         self.downGraphicsView_2.setLabel('left', text='Amplitude(Vt)')
         self.downGraphicsView_2.setLabel('bottom', text='Winkelfrequenz')
 
-        self.upGraphicsView_3.addLegend()
         self.upGraphicsView_3.setBackground(mkColor(0.82))
+        self.upGraphicsView_3.setTitle('Filterfrequenzgang')
+        self.upGraphicsView_3.setLabel('left', text='Amplitude(Vt)')
+        self.upGraphicsView_3.setLabel('bottom', text='Winkelfrequenz')
 
         self.downGraphicsView_3.setBackground(mkColor(0.82))
 
