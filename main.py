@@ -9,6 +9,7 @@ import Filter_new
 import pyqtgraph
 import bandpass
 import Signale_new
+import Autokorrelation
 
 
 class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
@@ -37,23 +38,21 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
                 self.v3_duration.value(),
                 self.upGraphicsView_3, self.downGraphicsView_3, self.v3_signaltype.currentText())
         )
+        self.pushButton_7.clicked.connect(
+            lambda: forthExperiment(
+                self.v4_frequenz.value(),
+                self.v4_duration.value(),
+                self.upGraphicsView_4, self.downGraphicsView_4, self.v4_signaltype.currentText())
+        )
         self.upGraphicsView.setBackground(mkColor(0.82))
         self.upGraphicsView.setTitle('Echte Daten')
         self.upGraphicsView.setLabel('left', text='Amplitude(Vt)')
         self.upGraphicsView.setLabel('bottom', text='Zeit(Sec)')
 
         self.downGraphicsView.setBackground(mkColor(0.82))
-        self.downGraphicsView.setTitle('Readed Data')
+        self.downGraphicsView.setTitle('Signal im Frequenzbereich')
         self.downGraphicsView.setLabel('left', text='Amplitude(Vt)')
         self.downGraphicsView.setLabel('bottom', text='Zeit(Sec)')
-
-        self.upGraphicsView_2.setBackground(mkColor(0.82))
-        upGraphicsView2Legend = self.upGraphicsView_2.addLegend(offset=(2, 2),
-                                                                pen=mkPen(mkColor(0.0)), brush=mkBrush(mkColor(0.95)), labelTextColor=mkColor(0.0))
-        upGraphicsView2Legend.addItem(PlotDataItem(
-            range(100), pen=mkPen(color='b')), 'Daten')
-        upGraphicsView2Legend.addItem(PlotDataItem(
-            range(100), pen=mkPen(color='r')), 'Gefilterte gelesene Daten')
         self.downGraphicsView.setLabel('left', text='Amplitude(Vt)')
         self.downGraphicsView.setLabel('bottom', text='Zeit(Sec)')
 
@@ -72,6 +71,23 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
         self.downGraphicsView_4.setBackground(mkColor(0.82))
 
 
+def forthExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
+    data = []
+    if type == "Sinus":
+        data = Signale.sin(2, 10, duration)
+    elif type == "Rechteck":
+        data = Signale.rechteck(2, 10, duration)
+    elif type == "Dreieck":
+        data = Signale.dreieck(2, 10, duration)
+    multiple = int(2000/freq)
+    multiple = 1 if multiple < 1 else multiple
+    readedDataY = data[::multiple]
+    readedDataX = [i*multiple for i in range(len(readedDataY))]
+    filterRes = Autokorrelation.akf(readedDataY, freq, duration)
+
+    plotGraphWithData(filterRes, readedDataY, qtGraphUp)
+
+
 def thirdExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
     data = []
     if type == "Sinus":
@@ -88,7 +104,7 @@ def thirdExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
     filterRes = bandpass.Filter(freq, duration, readedDataY)
 
     plotGraphWithXY((filterRes[2], filterRes[3]), qtGraphUp)
-    plotGraphWithXY((filterRes[0], filterRes[1]), qtGraphDown, 'b')
+    plotGraph(filterRes[0], qtGraphDown, 'b')
 
 
 def secondExperiment(freq, duration, a1, a2, b1, b2, qtGraphUp, qtGraphDown, type):
@@ -108,7 +124,7 @@ def secondExperiment(freq, duration, a1, a2, b1, b2, qtGraphUp, qtGraphDown, typ
 
     filterRes = Filter_new.Filter(freq, duration, a1, a2, b1, b2, readedDataY)
     plotGraph(filterRes[0], qtGraphUp)
-    plotGraph(filterRes[1], qtGraphDown)
+    plotGraph(filterRes[1], qtGraphDown, "b")
 
 
 def firstExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
