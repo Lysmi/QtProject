@@ -65,14 +65,14 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
         self.downGraphicsView_2.setLabel('bottom', text='Frequenz (s)')
 
         self.upGraphicsView_3.setBackground(mkColor(0.82))
-        self.upGraphicsView_3.setTitle('Fouriertransformation')
+        self.upGraphicsView_3.setTitle('Gefiltertes Signal')
         self.upGraphicsView_3.setLabel('left', text='Amplitude')
-        self.upGraphicsView_3.setLabel('bottom', text='Frequenz (s)')
+        self.upGraphicsView_3.setLabel('bottom', text='Zeit [s]')
 
         self.downGraphicsView_3.setBackground(mkColor(0.82))
-        self.downGraphicsView_3.setTitle('Gefiltertes Signal')
+        self.downGraphicsView_3.setTitle('Fouriertransformation')
         self.downGraphicsView_3.setLabel('left', text='Amplitude')
-        self.downGraphicsView_3.setLabel('bottom', text='Zeit [s]')
+        self.downGraphicsView_3.setLabel('bottom', text='Frequenz (s)')
 
         self.upGraphicsView_4.setBackground(mkColor(0.82))
         self.upGraphicsView_4.setTitle('Autokorrelation')
@@ -114,8 +114,8 @@ def thirdExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
 
     filterRes = bandpass.Filter(freq, duration, readedDataY)
 
-    plotGraphWithXY((filterRes[2], filterRes[3]), qtGraphUp)
-    plotGraph(filterRes[0], qtGraphDown, 'b')
+    plotGraphWithXY((filterRes[2], filterRes[3]), qtGraphDown)
+    plotGraph(filterRes[0], qtGraphUp, 'b')
 
 
 def secondExperiment(freq, duration, a1, a2, b1, b2, qtGraphUp, qtGraphDown, type):
