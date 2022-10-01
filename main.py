@@ -6,6 +6,7 @@ import os
 import Signale
 from Filter import Filter
 import pyqtgraph
+import bandpass
 
 
 class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
@@ -28,30 +29,36 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
                 self.v1_duration.value(),
                 self.upGraphicsView, self.downGraphicsView, self.v1_signaltype.currentText())
         )
+        self.pushButton_6.clicked.connect(
+            lambda: thirdExperiment(
+                self.v3_frequenz.value(),
+                self.v3_duration.value(),
+                self.upGraphicsView_3, self.downGraphicsView_3, self.v3_signaltype.currentText())
+        )
         self.upGraphicsView.setBackground(mkColor(0.82))
-        self.upGraphicsView.setTitle('Real Data')
+        self.upGraphicsView.setTitle('Echte Daten')
         self.upGraphicsView.setLabel('left', text='Amplitude(Vt)')
-        self.upGraphicsView.setLabel('bottom', text='Time(Sec)')
+        self.upGraphicsView.setLabel('bottom', text='Zeit(Sec)')
 
         self.downGraphicsView.setBackground(mkColor(0.82))
         self.downGraphicsView.setTitle('Readed Data')
         self.downGraphicsView.setLabel('left', text='Amplitude(Vt)')
-        self.downGraphicsView.setLabel('bottom', text='Time(Sec)')
+        self.downGraphicsView.setLabel('bottom', text='Zeit(Sec)')
 
         self.upGraphicsView_2.setBackground(mkColor(0.82))
         upGraphicsView2Legend = self.upGraphicsView_2.addLegend(offset=(2, 2),
                                                                 pen=mkPen(mkColor(0.0)), brush=mkBrush(mkColor(0.95)), labelTextColor=mkColor(0.0))
         upGraphicsView2Legend.addItem(PlotDataItem(
-            range(100), pen=mkPen(color='b')), 'Data')
+            range(100), pen=mkPen(color='b')), 'Daten')
         upGraphicsView2Legend.addItem(PlotDataItem(
-            range(100), pen=mkPen(color='r')), 'Filtered Readed Data')
+            range(100), pen=mkPen(color='r')), 'Gefilterte gelesene Daten')
         self.downGraphicsView.setLabel('left', text='Amplitude(Vt)')
-        self.downGraphicsView.setLabel('bottom', text='Time(Sec)')
+        self.downGraphicsView.setLabel('bottom', text='Zeit(Sec)')
 
         self.downGraphicsView_2.setBackground(mkColor(0.82))
-        self.downGraphicsView_2.setTitle('Filter Frequency Response')
+        self.downGraphicsView_2.setTitle('Filterfrequenzgang')
         self.downGraphicsView_2.setLabel('left', text='Amplitude(Vt)')
-        self.downGraphicsView_2.setLabel('bottom', text='Angular Frequency')
+        self.downGraphicsView_2.setLabel('bottom', text='Winkelfrequenz')
 
         self.upGraphicsView_3.addLegend()
         self.upGraphicsView_3.setBackground(mkColor(0.82))
@@ -61,6 +68,25 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
         self.upGraphicsView_4.setBackground(mkColor(0.82))
 
         self.downGraphicsView_4.setBackground(mkColor(0.82))
+
+
+def thirdExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
+    data = []
+    if type == "Sinus":
+        data = Signale.sin(2, 10, duration)
+    elif type == "Rechteck":
+        data = Signale.rechteck(2, 10, duration)
+    elif type == "Dreieck":
+        data = Signale.dreieck(2, 10, duration)
+    multiple = int(2000/freq)
+    multiple = 1 if multiple < 1 else multiple
+    readedDataY = data[::multiple]
+    readedDataX = [i*multiple for i in range(len(readedDataY))]
+
+    filterRes = bandpass.Filter(freq, duration, readedDataY)
+
+    plotGraphWithXY((filterRes[2], filterRes[3]), qtGraphUp)
+    plotGraphWithXY((filterRes[0], filterRes[1]), qtGraphDown, 'b')
 
 
 def secondExperiment(freq, duration, a1, a2, b1, b2, qtGraphUp, qtGraphDown, type):
