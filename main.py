@@ -56,6 +56,8 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
         self.downGraphicsView.setLabel('left', text='Amplitude(Vt)')
         self.downGraphicsView.setLabel('bottom', text='Zeit(Sec)')
 
+        self.upGraphicsView_2.setBackground(mkColor(0.82))
+
         self.downGraphicsView_2.setBackground(mkColor(0.82))
         self.downGraphicsView_2.setTitle('Filterfrequenzgang')
         self.downGraphicsView_2.setLabel('left', text='Amplitude(Vt)')
@@ -67,6 +69,9 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
         self.downGraphicsView_3.setBackground(mkColor(0.82))
 
         self.upGraphicsView_4.setBackground(mkColor(0.82))
+        self.upGraphicsView_4.setTitle('Autokorrelation')
+        self.upGraphicsView_4.setLabel('left', text='Amplitude(Vt)')
+        self.upGraphicsView_4.setLabel('bottom', text='Zeit [s]')
 
         self.downGraphicsView_4.setBackground(mkColor(0.82))
 
