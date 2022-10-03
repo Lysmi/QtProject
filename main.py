@@ -10,6 +10,7 @@ import pyqtgraph
 import bandpass
 import Signale_new
 import Autokorrelation
+import ReadADC_V01
 
 
 class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
@@ -34,7 +35,7 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
         )
         self.pushButton_6.clicked.connect(
             lambda: thirdExperiment(
-                self.v3_frequenz.value(),
+                67,
                 self.v3_duration.value(),
                 self.upGraphicsView_3, self.downGraphicsView_3, self.v3_signaltype.currentText())
         )
@@ -90,6 +91,8 @@ def forthExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
         data = Signale.rechteck(2, 10, duration)
     elif type == "Dreieck":
         data = Signale.dreieck(2, 10, duration)
+    elif type == "ADC":
+        data = ReadADC_V01.ADCSignale(freq, duration)
     multiple = int(2000/freq)
     multiple = 1 if multiple < 1 else multiple
     readedDataY = data[::multiple]
@@ -107,6 +110,8 @@ def thirdExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
         data = Signale.rechteck(2, 10, duration)
     elif type == "Dreieck":
         data = Signale.dreieck(2, 10, duration)
+    elif type == "ADC":
+        data = ReadADC_V01.ADCSignale(freq, duration)
     multiple = int(2000/freq)
     multiple = 1 if multiple < 1 else multiple
     readedDataY = data[::multiple]
@@ -128,6 +133,8 @@ def secondExperiment(freq, duration, a1, a2, b1, b2, qtGraphUp, qtGraphDown, typ
         data = Signale.rechteck(2, 10, duration)
     elif type == "Dreieck":
         data = Signale.dreieck(2, 10, duration)
+    elif type == "ADC":
+        data = ReadADC_V01.ADCSignale(freq, duration)
     multiple = int(2000/freq)
     multiple = 1 if multiple < 1 else multiple
     readedDataY = data[::multiple]
@@ -146,6 +153,8 @@ def firstExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
         data = Signale_new.rechteck(2, 10, duration)
     elif type == "Dreieck":
         data = Signale_new.dreieck(2, 10, duration)
+    elif type == "ADC":
+        data = ReadADC_V01.ADCSignale(freq, duration)
     multiple = int(2000/freq)
     multiple = 1 if multiple < 1 else multiple
     readedDataY = data[::multiple]
