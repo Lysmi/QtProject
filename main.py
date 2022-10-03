@@ -43,7 +43,7 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
             lambda: forthExperiment(
                 self.v4_frequenz.value(),
                 self.v4_duration.value(),
-                self.upGraphicsView_4, self.downGraphicsView_4, self.v4_signaltype.currentText())
+                self.upGraphicsView_4, self.v4_signaltype.currentText())
         )
         self.upGraphicsView.setBackground(mkColor(0.82))
         self.upGraphicsView.setTitle('Echte Daten')
@@ -83,7 +83,7 @@ class MainWindow(QtWidgets.QMainWindow, mainForm.Ui_MainWindow):
         self.upGraphicsView_4.setLabel('bottom', text='Zeit [s]')
 
 
-def forthExperiment(freq, duration, qtGraphUp, qtGraphDown, type):
+def forthExperiment(freq, duration, qtGraphUp, type):
     data = []
     if type == "Sinus":
         data = Signale.sin(2, 10, duration)
